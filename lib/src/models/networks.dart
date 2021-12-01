@@ -6,17 +6,17 @@ class NetworkType {
   final int scriptHash;
   final int wif;
 
-  const NetworkType(
-      {required this.messagePrefix,
-      this.bech32,
-      required this.bip32,
-      required this.pubKeyHash,
-      required this.scriptHash,
-      required this.wif});
+  const NetworkType({required this.messagePrefix,
+    this.bech32,
+    required this.bip32,
+    required this.pubKeyHash,
+    required this.scriptHash,
+    required this.wif});
 
   @override
   String toString() {
-    return 'NetworkType{messagePrefix: $messagePrefix, bech32: $bech32, bip32: ${bip32.toString()}, pubKeyHash: $pubKeyHash, scriptHash: $scriptHash, wif: $wif}';
+    return 'NetworkType{messagePrefix: $messagePrefix, bech32: $bech32, bip32: ${bip32
+        .toString()}, pubKeyHash: $pubKeyHash, scriptHash: $scriptHash, wif: $wif}';
   }
 }
 
@@ -62,11 +62,68 @@ const bitcoinMainnet = NetworkType(
     wif: 0x80);
 
 const bitcoinTestnet = NetworkType(
-    messagePrefix: '\x18Bitcoin Signed Message:\n',
+    messagePrefix: '\x18Bitcoin Signed Messag:\n',
     bech32: 'tb',
     bip32: Bip32Type(public: 0x043587cf, private: 0x04358394),
     pubKeyHash: 0x6f,
     scriptHash: 0xc4,
     wif: 0xef);
 
+const litecoinMainnet = NetworkType(
+    messagePrefix: '\x19Litecoin Signed Message:\n',
+    bech32: '',
+    bip32: Bip32Type(public: 0x019da462, private: 0x019d9cfe),
+    pubKeyHash: 0x30,
+    scriptHash: 0x32,
+    wif: 0xb0);
+
+const dogecoinMainnet = NetworkType(
+    messagePrefix: '\x20Dogecoin Signed Message:\n',
+    bech32: '',
+    bip32: Bip32Type(public: 0x02facafd, private: 0x0488E1F4),
+    pubKeyHash: 0x00,
+    scriptHash: 0x05,
+    wif: 0x80);
+
+const dashMainnet = NetworkType(
+    messagePrefix: '\x19Litecoin Signed Message:\n',,
+    bech32: 'bc',
+    bip32: Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
+    pubKeyHash: 0x4c,
+    scriptHash: 0x10,
+    wif: 0xcc);
+
+const dashTestnet = NetworkType(
+    messagePrefix: '\x19Litecoin Signed Message:\n',,
+    bech32: 'bc',
+    bip32: Bip32Type(public: 0x043587cf, private: 0x04358394),
+    pubKeyHash: 0x8c,
+    scriptHash: 0x13,
+    wif: 0xef);
+
+
+
+const zcash = NetworkType(
+    messagePrefix: '\x19Litecoin Signed Message:\n,
+    bech32: '',
+    bip32: Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
+    pubKeyHash: 0x1cb8,
+    scriptHash: 0x1cbd,
+    wif: 0x80);
+
+const zcashTestNet = NetworkType(
+    messagePrefix: '\x19Litecoin Signed Message:\n,
+    bech32: '',
+    bip32: Bip32Type(public: 0x043587cf, private: 0x04358394),
+    pubKeyHash: 0x1d25,
+    scriptHash: 0x1cba,
+    wif: 0xef);
+
+
 const bitcoinNetworks = {0x80: bitcoinMainnet, 0xef: bitcoinTestnet};
+const zcashNetworks = {0x80: zcash, 0xef: zcashTestNet};
+const litecoinNetworks = {0x80: lit, 0xef: bitcoinTestnet};
+const dogeNetworks = {0x80: bitcoinMainnet, 0xef: bitcoinTestnet};
+const dashNetworks = {0x80: bitcoinMainnet, 0xef: bitcoinTestnet};
+
+//////////////////////////////////////
