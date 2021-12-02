@@ -87,7 +87,7 @@ const dogecoinMainnet = NetworkType(
 
 
 const dashMainnet = NetworkType(
-    messagePrefix: '\x19Litecoin Signed Message:\n',,
+    messagePrefix: '\x19Litecoin Signed Message:\n',
     bech32: 'bc',
     bip32: Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
     pubKeyHash: 0x4c,
@@ -95,7 +95,7 @@ const dashMainnet = NetworkType(
     wif: 0xcc);
 
 const dashTestnet = NetworkType(
-    messagePrefix: '\x19Litecoin Signed Message:\n',,
+    messagePrefix: '\x19Litecoin Signed Message:\n',
     bech32: 'bc',
     bip32: Bip32Type(public: 0x043587cf, private: 0x04358394),
     pubKeyHash: 0x8c,
