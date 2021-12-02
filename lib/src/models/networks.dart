@@ -78,12 +78,13 @@ const litecoinMainnet = NetworkType(
     wif: 0xb0);
 
 const dogecoinMainnet = NetworkType(
-    messagePrefix: '\x20Dogecoin Signed Message:\n',
+    messagePrefix: '\x19Litecoin Signed Message:\n',
     bech32: '',
-    bip32: Bip32Type(public: 0x02facafd, private: 0x0488E1F4),
-    pubKeyHash: 0x00,
-    scriptHash: 0x05,
-    wif: 0x80);
+    bip32: Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
+    pubKeyHash: 0x1e,
+    scriptHash: 0x5,
+    wif: 0x9e);
+
 
 const dashMainnet = NetworkType(
     messagePrefix: '\x19Litecoin Signed Message:\n',,
@@ -121,9 +122,7 @@ const zcashTestNet = NetworkType(
 
 
 const bitcoinNetworks = {0x80: bitcoinMainnet, 0xef: bitcoinTestnet};
+const litecoinNetworks = {0xb0: litecoinMainnet};
+const dashNetworks = {0xcc: dashMainnet, 0xef: dashTestnet};
+const dogeNetworks = {0x9e: dogecoinMainnet };
 const zcashNetworks = {0x80: zcash, 0xef: zcashTestNet};
-const litecoinNetworks = {0x80: lit, 0xef: bitcoinTestnet};
-const dogeNetworks = {0x80: bitcoinMainnet, 0xef: bitcoinTestnet};
-const dashNetworks = {0x80: bitcoinMainnet, 0xef: bitcoinTestnet};
-
-//////////////////////////////////////
