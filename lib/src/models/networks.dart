@@ -105,7 +105,7 @@ const dashTestnet = NetworkType(
 
 
 const zcash = NetworkType(
-    messagePrefix: '\x19Litecoin Signed Message:\n,
+    messagePrefix: '\x19Litecoin Signed Message:\n',
     bech32: '',
     bip32: Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
     pubKeyHash: 0x1cb8,
@@ -113,7 +113,7 @@ const zcash = NetworkType(
     wif: 0x80);
 
 const zcashTestNet = NetworkType(
-    messagePrefix: '\x19Litecoin Signed Message:\n,
+    messagePrefix: '\x19Litecoin Signed Message:\n',
     bech32: '',
     bip32: Bip32Type(public: 0x043587cf, private: 0x04358394),
     pubKeyHash: 0x1d25,
